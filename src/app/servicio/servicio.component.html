@@ -1,0 +1,30 @@
+<br>
+<form #formPost="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form">
+        <div class="form1">
+        <label for="">Título</label>
+    &nbsp;
+    <input class="titulo" type="text" name="title" [(ngModel)]="post.title">
+    <br>
+    <label for="">Mensaje</label>
+    &nbsp;
+    <textarea class="mensaje" type="text" name="body" id="" [(ngModel)]="post.body"></textarea>
+    <br> 
+    </div>
+    &nbsp;
+    <div class="form2">
+        <label for="">Id usuario</label>
+        &nbsp;
+        <input type="number" name="userId" id="" placeholder=" " [(ngModel)]="post.userId" style="width: 2.5em;">
+        <br>
+        <label for="">Url de la imagen (opcional)</label>
+        &nbsp;
+        <input type="text" name="url" [(ngModel)]="post.image">
+        <br>
+        <button>enviar</button>
+
+    </div>
+    <br>
+    </div>
+</form>
+

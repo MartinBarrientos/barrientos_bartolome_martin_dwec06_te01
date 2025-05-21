@@ -1,0 +1,42 @@
+<body>
+    <br>
+    <div class="grafico">
+        <div class="grafico2">
+
+            <canvas baseChart
+        
+                [datasets]="barChartData"
+                [labels]="barChartLabels"
+                [options]="barChartOptions"
+                [legend]="true"
+                [type]="'bar'">
+            </canvas>
+        </div>
+
+    </div>
+
+<form action="ngForm" (ngSubmit)="onSubmit()">
+    <label for="">Buscar por id del post </label>
+    &nbsp;
+    <input #id="ngModel" [(ngModel)]="this.id" type="text" name="id" id="id" placeholder="">
+    &nbsp;
+    <button>buscar</button>
+</form>
+<ul>
+    <li *ngFor="let post of posts">
+
+        <div class="post">
+            <div class="idUsuarioPost">
+                <p>id usuario:{{post.userId}} </p>
+            </div>
+            <h2 style="text-align: center;">{{post.title}}</h2>
+            <p>{{post.body}}</p>
+            <img [src]="post.image" alt="" style="width: 45em; height: 30em; display: flex; flex-direction: row;">
+            <div class="idUsuarioPost">
+                <p> id post: {{post.id}}</p>
+            </div>
+        </div>
+    </li>
+</ul>
+</body>
+

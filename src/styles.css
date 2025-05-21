@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background-image: url("../src/assets/stage.jpg");
+    background-size: auto;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    /* Escala la imagen para cubrir todo el fondo */
+    background-repeat: no-repeat;
+    /* No se repite */
+    background-position: center;
+    /* Centrada horizontal y verticalmente */
+    background-attachment: fixed;
+    position: relative;
+    color: white;
+
+}
+input, textarea, button{
+    background-color: rgb(236, 204, 163);
+    border-radius: 0.75em;
+    border-color: white;
+}
+button{
+    border-radius: 3em;
+    width: 5em;
+    height: 2em;
+}
+

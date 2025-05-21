@@ -1,0 +1,54 @@
+<div class="login" *ngIf="!autorizado">
+  <h2>Acceso restringido</h2>
+  <form (ngSubmit)="comprobarAcceso()">
+    <label>Usuario:</label>
+    <input type="text" [(ngModel)]="usuario" name="usuario">
+    <br>
+    <label>Contraseña:</label>
+    <input type="password" [(ngModel)]="contrasena" name="contrasena">
+    <br>
+    <button type="submit">Entrar</button>
+    <p *ngIf="error" style="color: red; background-color: black;">{{ error }}</p>
+  </form>
+</div>
+
+<div class="modificar" *ngIf="autorizado">
+  <h2 style="text-align: center;">Bienvenido, {{usuario}}</h2>
+  <!-- Contenido real del componente -->
+  <div class="modificar2">
+    <div>
+      <form class="actualizar" #modificar="ngForm" (ngSubmit)="onSubmit()">
+        <p>Actualizar un POST</p>
+        <label for="">id del post: </label>
+        &nbsp;
+        <input name="id" type="number" [(ngModel)]="actualizarPost.id" required style="width: 3em;">
+        &nbsp;
+        <label for="">id de usuario: </label>
+        &nbsp;
+        <input name="userId" type="number" [(ngModel)]="actualizarPost.userId" required="" style="width: 3em;">
+        &nbsp;
+        <label for="">titulo: </label>
+        &nbsp;
+        <input name="title" type="text" [(ngModel)]="actualizarPost.title">
+        &nbsp;        
+        <label for="">mensaje: </label>
+        &nbsp;
+        <textarea class="mensaje" name="body" type="text" [(ngModel)]="actualizarPost.body"></textarea>
+        &nbsp;
+        <br>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+    <div>
+      <form class="eliminar" #eliminarForm="ngForm" (ngSubmit)="onSubmit2(actualizarPost.id)">
+        <p>Eliminar un POST</p>
+        <label for="">id del post: </label>
+        &nbsp;
+        <input name="id" type="number" [(ngModel)]="actualizarPost.id" required style="width: 3em;">
+        &nbsp;
+        <button type="submit">Eliminar</button>
+      </form>
+    </div>
+  </div>
+  <div></div>
+</div>

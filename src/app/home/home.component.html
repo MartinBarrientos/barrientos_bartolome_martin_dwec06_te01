@@ -1,0 +1,16 @@
+<h2 style="text-align: center;">Top 50 álbumes 2025</h2>
+
+<div class="contenedor" >
+
+    <li *ngFor="let album of albums">
+        <div class="lista">
+            <p>{{album.title}}</p>
+            <img style="border-radius: 10em; width: 5em; margin-left: 0.5em;" [src]="album.cover" alt="">
+        </div>
+    </li>
+
+
+</div>
+<div *ngIf="errorApi">
+    ❌ No se pudo conectar con el servidor. Intenta más tarde.
+</div>
